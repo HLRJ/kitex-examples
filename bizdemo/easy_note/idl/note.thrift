@@ -90,3 +90,5 @@ service NoteService {
     QueryNoteResponse QueryNote(1:QueryNoteRequest req)
     UpdateNoteResponse UpdateNote(1:UpdateNoteRequest req)
 }
+// 使用ubuntu20.04生成时,命令如下
+//kitex -module github.com/cloudwego/kitex-examples/bizdemo/easy_note -service note note.thrift
