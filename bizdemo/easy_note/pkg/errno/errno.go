@@ -62,6 +62,8 @@ func ConvertErr(err error) ErrNo {
 	if errors.As(err, &Err) {
 		return Err
 	}
+	//如果err是我们定义的ErrNo类型，将自动转化
+	//如果不是，我们将认为是服务错误，进行将err信息转到ServiceErr.ErrMsg
 
 	s := ServiceErr
 	s.ErrMsg = err.Error()
