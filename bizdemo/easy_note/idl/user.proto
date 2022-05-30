@@ -15,7 +15,7 @@
 
 syntax = "proto3";
 package user;
-option go_package = "userdemo"; //表明生成的代码会存在kitex_gen/userdemo目录下
+option go_package = "userdemo";
 // 使用 proto写的 BaseRep 和 thrift写的意义相同
 message BaseResp {
     int64 status_code = 1; //响应的状态码
