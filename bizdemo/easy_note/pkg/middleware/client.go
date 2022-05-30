@@ -23,13 +23,13 @@ import (
 	"github.com/cloudwego/kitex/pkg/rpcinfo"
 )
 
-var _ endpoint.Middleware = ClientMiddleware
+var _ endpoint.Middleware = ClientMiddleware // 此时下划线的作用是判断ServerMiddleware是否为endpoint.Middleware类型
 
 // ClientMiddleware client middleware print server address 、rpc timeout and connection timeout
 func ClientMiddleware(next endpoint.Endpoint) endpoint.Endpoint {
 	return func(ctx context.Context, req, resp interface{}) (err error) {
 		ri := rpcinfo.GetRPCInfo(ctx)
-		// get server information
+		// get server information  打印server的地址，rpc超时，读写超时，日志，实际开发不建议这样做、有性能损耗
 		klog.Infof("server address: %v, rpc timeout: %v, readwrite timeout: %v\n", ri.To().Address(), ri.Config().RPCTimeout(), ri.Config().ConnectTimeout())
 		if err = next(ctx, req, resp); err != nil {
 			return err
