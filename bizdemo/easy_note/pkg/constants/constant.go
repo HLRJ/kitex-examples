@@ -16,18 +16,18 @@
 package constants
 
 const (
-	NoteTableName           = "note"
-	UserTableName           = "user"
-	SecretKey               = "secret key"
-	IdentityKey             = "id"
-	Total                   = "total"
-	Notes                   = "notes"
-	NoteID                  = "note_id"
-	ApiServiceName          = "demoapi"
+	NoteTableName           = "note"       // 笔记表名
+	UserTableName           = "user"       // 用户表名
+	SecretKey               = "secret key" // jwt 变量
+	IdentityKey             = "id"         //同上
+	Total                   = "total"      // gorm 查询用到的变量
+	Notes                   = "notes"      //同上
+	NoteID                  = "note_id"    //同上
+	ApiServiceName          = "demoapi"    //三类服务
 	NoteServiceName         = "demonote"
 	UserServiceName         = "demouser"
-	MySQLDefaultDSN         = "gorm:gorm@tcp(localhost:9910)/gorm?charset=utf8&parseTime=True&loc=Local"
-	EtcdAddress             = "127.0.0.1:2379"
-	CPURateLimit    float64 = 80.0
-	DefaultLimit            = 10
+	MySQLDefaultDSN         = "gorm:gorm@tcp(localhost:9910)/gorm?charset=utf8&parseTime=True&loc=Local" // 数据源名
+	EtcdAddress             = "127.0.0.1:2379"                                                           //etcd 地址
+	CPURateLimit    float64 = 80.0                                                                       //cpu 限制
+	DefaultLimit            = 10                                                                         //默认分页限制
 )
